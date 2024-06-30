@@ -7,11 +7,17 @@ class Point(
         return xValue
     }
 
+    fun setXValue(newXValue: Double){
+        xValue = newXValue
+    }
+
     fun getYValue(): Double{
         return yValue
     }
 
-    // DO I NEED THIS FUNCTION????
+    fun setYValue(newYValue: Double){
+        yValue = newYValue
+    }
     fun getValues(): Array<Double>{
         return arrayOf(xValue, yValue)
     }
@@ -20,8 +26,8 @@ class Point(
         return Point(xValue, yValue)
     }
 
-    fun moveTo(newXValue: Double, newYValue: Double){
-        xValue = newXValue
-        yValue = newYValue
+    fun move(deltaX: Double, deltaY: Double){
+        xValue += deltaX
+        yValue += deltaY
     }
 }
