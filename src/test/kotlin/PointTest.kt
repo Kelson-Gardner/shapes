@@ -3,6 +3,12 @@ import kotlin.test.assertEquals
 
 class PointTest {
     @Test
+    fun testPointConstruction(){
+        val point = Point(1.0, 1.0)
+        assertEquals(point.getXValue(), 1.0)
+        assertEquals(point.getYValue(), 1.0)
+    }
+    @Test
     fun testGetters(){
         val point = Point(1.0, 1.0)
         assertEquals(point.getXValue(), 1.0)
@@ -22,12 +28,6 @@ class PointTest {
         point.setYValue(10920934.29831)
         assertEquals(point.getXValue(), -312930982.9839109)
         assertEquals(point.getYValue(), 10920934.29831)
-    }
-    @Test
-    fun testPointConstruction(){
-        val point = Point(1.0, 1.0)
-        assertEquals(point.getXValue(), 1.0)
-        assertEquals(point.getYValue(), 1.0)
     }
     @Test
     fun testClonePoint(){

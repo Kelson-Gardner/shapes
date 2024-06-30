@@ -17,10 +17,6 @@ class Line(
         return pointB
     }
 
-    fun getPoints(): Array<Point>{
-        return arrayOf(pointA, pointB)
-    }
-
     fun getSlope(): Double{
         val yDelta = pointA.getYValue() - pointB.getYValue()
         val xDelta = pointA.getXValue() - pointB.getXValue()

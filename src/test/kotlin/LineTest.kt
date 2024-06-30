@@ -10,9 +10,6 @@ class LineTest {
         assertEquals(line.getPointA(), pointA)
         assertEquals(line.getPointB(), pointB)
         val pointsArray = arrayOf(pointA, pointB)
-        for(i in 0..1){
-            assertEquals(line.getPoints()[i], pointsArray[i])
-        }
     }
     @Test
     fun testGetSlope(){
@@ -42,6 +39,5 @@ class LineTest {
         assertEquals(line.getPointA().getYValue(), 0.0)
         assertEquals(line.getPointB().getXValue(), -3.0)
         assertEquals(line.getPointB().getYValue(), -4.0)
-
     }
 }
