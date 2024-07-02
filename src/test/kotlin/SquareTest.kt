@@ -1,5 +1,6 @@
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 class SquareTest {
     private val topLeftCornerPoint1 = Point(0.0, 10.0)
     private val bottomRightCornerPoint1 = Point(10.0, 0.0)
@@ -34,5 +35,18 @@ class SquareTest {
         assertEquals(testSquare2.getTopLeftCorner().getYValue(), -7901015.9968)
         assertEquals(testSquare2.getBottomRightCorner().getXValue(), 7987656.76778)
         assertEquals(testSquare2.getBottomRightCorner().getYValue(), 8098984.0032)
+    }
+    @Test
+    fun testInvalidSquareFails(){
+        val point = Point(0.0, 0.0)
+        assertFailsWith<IllegalArgumentException> {
+            Square(point, point)
+        }
+        val testTopLeftPoint = Point(0.0, 0.0)
+        val testBottomRightPoint = Point(16.0, 0.0)
+        assertFailsWith<IllegalArgumentException> {
+            Square(testTopLeftPoint, testBottomRightPoint)
+        }
+
     }
 }

@@ -1,6 +1,6 @@
 import kotlin.test.Test
 import kotlin.test.assertEquals
-
+import kotlin.test.assertFailsWith
 class EllipseTest {
     private val testCenterPoint1 = Point(3.0, -4.0)
     private val testRadiiA1 = 4.0
@@ -35,5 +35,18 @@ class EllipseTest {
         testEllipse2.move(12343982.3423, -12323.0989989)
         assertEquals(testEllipse2.getCenterPoint().getXValue(), 11050084.108)
         assertEquals(testEllipse2.getCenterPoint().getYValue(), 0.0)
+    }
+    @Test
+    fun testInvalidEllipseFails(){
+        val centerPoint = Point(0.0, 0.0)
+        assertFailsWith<IllegalArgumentException> {
+            Ellipse(centerPoint, 0.0, 1.0)
+        }
+        assertFailsWith<IllegalArgumentException> {
+            Ellipse(centerPoint, 1.0, 0.0)
+        }
+        assertFailsWith<IllegalArgumentException> {
+            Ellipse(centerPoint, 0.0, 0.0)
+        }
     }
 }

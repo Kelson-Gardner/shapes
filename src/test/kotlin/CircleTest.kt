@@ -1,6 +1,6 @@
 import kotlin.test.Test
 import kotlin.test.assertEquals
-
+import kotlin.test.assertFailsWith
 class CircleTest {
     private val testCenterPoint1 = Point(5.0, 5.0)
     private val testCircle1 = Circle(testCenterPoint1, 5.0)
@@ -26,5 +26,12 @@ class CircleTest {
         testCircle2.move(11232129.232, -28386749283.22198)
         assertEquals(testCircle2.getCenterPoint().getXValue(), 8248407.9977)
         assertEquals(testCircle2.getCenterPoint().getYValue(), -2.8102767154888783E10)
+    }
+    @Test
+    fun testInvalidCircleFails(){
+        val centerPoint = Point(0.0, 0.0)
+        assertFailsWith<IllegalArgumentException> {
+            Circle(centerPoint, 0.0)
+        }
     }
 }

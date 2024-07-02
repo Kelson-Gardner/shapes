@@ -1,6 +1,6 @@
 import kotlin.test.Test
 import kotlin.test.assertEquals
-
+import kotlin.test.assertFailsWith
 class LineTest {
     private val testPointA1 = Point(0.0, 1.0)
     private val testPointB1 = Point(1.0, 5.0)
@@ -37,5 +37,13 @@ class LineTest {
         assertEquals(testLine2.getPointA().getYValue(), 2.0)
         assertEquals(testLine2.getPointB().getXValue(), 14.0)
         assertEquals(testLine2.getPointB().getYValue(), -4.0)
+    }
+
+    @Test
+    fun testInvalidLineFails(){
+        val point = Point(0.0, 0.0)
+        assertFailsWith<IllegalArgumentException> {
+            Line(point, point)
+        }
     }
 }

@@ -5,8 +5,9 @@ class Line(
     private var pointB: Point
 ) {
     init{
-        require(!pointA.getValues().contentEquals(pointB.getValues()))
-        {"The point values for the line cannot be the same!"}
+        require(!pointA.getValues().contentEquals(pointB.getValues())){
+            "The point values for the line cannot be the same!"
+        }
     }
 
     fun getPointA(): Point{

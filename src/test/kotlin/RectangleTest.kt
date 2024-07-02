@@ -1,5 +1,6 @@
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 class RectangleTest {
     private val topLeftCornerPoint1 = Point(1.0, 5.0)
     private val bottomRightCornerPoint1 = Point(5.0, 3.0)
@@ -33,5 +34,12 @@ class RectangleTest {
         assertEquals(testRectangle2.getTopLeftCorner().getYValue(), 1080967.335521)
         assertEquals(testRectangle2.getBottomRightCorner().getXValue(), -12355557.46652)
         assertEquals(testRectangle2.getBottomRightCorner().getYValue(), 75562.66880000001)
+    }
+    @Test
+    fun testInvalidRectangleFails(){
+        val point = Point(0.0, 0.0)
+        assertFailsWith<IllegalArgumentException> {
+            Rectangle(point, point)
+        }
     }
 }

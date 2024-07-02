@@ -1,6 +1,6 @@
 import kotlin.test.Test
 import kotlin.test.assertEquals
-
+import kotlin.test.assertFailsWith
 class TriangleTest {
     private val equilateralPointA = Point(2.0, 1.0)
     private val equilateralPointB = Point(4.5, 5.33)
@@ -62,5 +62,24 @@ class TriangleTest {
         assertEquals(scaleneTriangle.getPointB().getYValue(), 33434.857)
         assertEquals(scaleneTriangle.getPointC().getXValue(), -1043.001)
         assertEquals(scaleneTriangle.getPointC().getYValue(), 121403.2434)
+    }
+    @Test
+    fun testInvalidTriangleFails(){
+        val testAllSamePoint = Point(0.0, 0.0)
+        assertFailsWith<IllegalArgumentException> {
+            Triangle(testAllSamePoint, testAllSamePoint, testAllSamePoint)
+        }
+        val testXPoint1 = Point(0.0, 0.0)
+        val testXPoint2 = Point(1.0, 0.0)
+        val testXPoint3 = Point(2.0, 0.0)
+        assertFailsWith<IllegalArgumentException> {
+            Triangle(testXPoint1, testXPoint2, testXPoint3)
+        }
+        val testYPoint1 = Point(0.0, 0.0)
+        val testYPoint2 = Point(0.0, 1.0)
+        val testYPoint3 = Point(0.0, 2.0)
+        assertFailsWith<IllegalArgumentException> {
+            Triangle(testYPoint1, testYPoint2, testYPoint3)
+        }
     }
 }
