@@ -1,6 +1,6 @@
 import kotlin.math.abs
 
-class Rectangle(
+open class Rectangle(
     private var topLeftCornerPoint: Point,
     private var bottomRightCornerPoint: Point
 ) : Shape() {

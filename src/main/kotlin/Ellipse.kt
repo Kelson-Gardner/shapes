@@ -1,34 +1,33 @@
 import kotlin.math.PI
-
-class Ellipse (
-    private var point: Point,
-    private var radiiA: Double,
-    private var radiiB: Double
+open class Ellipse (
+    private val center: Point,
+    private val radiusX: Double,
+    private val radiusY: Double
 ) : Shape() {
     init{
-        require(radiiA > 0 && radiiB > 0){
+        require(radiusX > 0 && radiusY > 0){
             "The radii must be greater than 0"
         }
     }
 
-    fun getPoint(): Point{
-        return point
+    fun getCenterPoint(): Point{
+        return center
     }
 
-    fun getRadiiA(): Double{
-        return radiiA
+    fun getRadiusX(): Double{
+        return radiusX
     }
 
-    fun getRadiiB(): Double{
-        return radiiB
+    fun getRadiusY(): Double{
+        return radiusY
     }
 
     override fun getArea(): Double{
-        return PI * radiiA * radiiB
+        return PI * radiusX * radiusY
     }
 
     override fun move(deltaX: Double, deltaY: Double){
-        point.setXValue(point.getXValue() + deltaX)
-        point.setYValue(point.getYValue() + deltaY)
+        center.setXValue(center.getXValue() + deltaX)
+        center.setYValue(center.getYValue() + deltaY)
     }
 }
