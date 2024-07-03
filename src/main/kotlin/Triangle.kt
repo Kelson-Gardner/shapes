@@ -5,7 +5,7 @@ class Triangle(
     private var pointA: Point,
     private var pointB: Point,
     private var pointC: Point
-) : Shape(){
+) : Shape{
 
     init{
         require(!pointA.getValues().contentEquals(pointB.getValues())

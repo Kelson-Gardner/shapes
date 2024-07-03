@@ -3,7 +3,7 @@ import kotlin.math.abs
 open class Rectangle(
     private var topLeftCornerPoint: Point,
     private var bottomRightCornerPoint: Point
-) : Shape() {
+) : Shape {
 
     init{
         require(!topLeftCornerPoint.getValues().contentEquals(bottomRightCornerPoint.getValues())){

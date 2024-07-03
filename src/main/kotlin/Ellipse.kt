@@ -3,7 +3,7 @@ open class Ellipse (
     private val center: Point,
     private val radiusX: Double,
     private val radiusY: Double
-) : Shape() {
+) : Shape {
     init{
         require(radiusX > 0 && radiusY > 0){
             "The radii must be greater than 0\n"

@@ -1,4 +1,4 @@
-abstract class Shape {
-    abstract fun getArea(): Double
-    abstract fun move(deltaX: Double, deltaY: Double)
+interface Shape {
+    fun getArea(): Double
+    fun move(deltaX: Double, deltaY: Double)
 }
