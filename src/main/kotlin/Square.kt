@@ -6,7 +6,7 @@ class Square(
     init{
         require(abs(pointA.getXValue() - pointB.getXValue())
                 == abs(pointA.getYValue() - pointB.getYValue())){
-            "All sides must be the same length!"
+            "All sides must be the same length!\n"
         }
     }
 }

@@ -11,17 +11,17 @@ class Triangle(
         require(!pointA.getValues().contentEquals(pointB.getValues())
                 || !pointA.getValues().contentEquals(pointC.getValues())
                 || !pointB.getValues().contentEquals(pointC.getValues())){
-            "None of the triangle points can be the same!"
+            "None of the triangle points can be the same!\n"
         }
         require(pointA.getXValue() != pointB.getXValue()
                 || pointA.getXValue() != pointC.getXValue()
                 || pointB.getXValue() != pointC.getXValue()){
-            "The triangles points cannot all be on the same line on the X-axis!"
+            "The triangles points cannot all be on the same line on the X-axis!\n"
         }
         require(pointA.getYValue() != pointB.getYValue()
                 || pointA.getYValue() != pointC.getYValue()
                 || pointB.getYValue() != pointC.getYValue()){
-            "The triangles points cannot all be on the same line on the Y-axis!"
+            "The triangles points cannot all be on the same line on the Y-axis!\n"
         }
     }
 

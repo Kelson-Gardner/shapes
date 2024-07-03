@@ -6,7 +6,7 @@ open class Ellipse (
 ) : Shape() {
     init{
         require(radiusX > 0 && radiusY > 0){
-            "The radii must be greater than 0"
+            "The radii must be greater than 0\n"
         }
     }
 

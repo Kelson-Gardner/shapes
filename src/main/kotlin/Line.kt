@@ -6,7 +6,7 @@ class Line(
 ) {
     init{
         require(!pointA.getValues().contentEquals(pointB.getValues())){
-            "The point values for the line cannot be the same!"
+            "The point values for the line cannot be the same!\n"
         }
     }
 

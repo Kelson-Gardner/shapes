@@ -7,7 +7,7 @@ open class Rectangle(
 
     init{
         require(!topLeftCornerPoint.getValues().contentEquals(bottomRightCornerPoint.getValues())){
-            "The point values for the rectangle cannot be the same!"
+            "The point values for the rectangle cannot be the same!\n"
         }
     }
 
