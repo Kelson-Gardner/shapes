@@ -1,5 +1,4 @@
 import kotlin.math.abs
-import kotlin.math.sqrt
 
 class Triangle(
     private var pointA: Point,
