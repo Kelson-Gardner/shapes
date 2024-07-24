@@ -26,10 +26,8 @@ open class Rectangle(
     }
 
     override fun move(deltaX: Double, deltaY: Double){
-        topLeftCornerPoint.setXValue(topLeftCornerPoint.getXValue() + deltaX)
-        topLeftCornerPoint.setYValue(topLeftCornerPoint.getYValue() + deltaY)
-        bottomRightCornerPoint.setXValue(bottomRightCornerPoint.getXValue() + deltaX)
-        bottomRightCornerPoint.setYValue(bottomRightCornerPoint.getYValue() + deltaY)
+        topLeftCornerPoint.move(deltaX, deltaY)
+        bottomRightCornerPoint.move(deltaX, deltaY)
     }
 
     private fun getWidth(): Double{

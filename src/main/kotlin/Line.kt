@@ -1,8 +1,8 @@
 import kotlin.math.sqrt
 
 class Line(
-    private var pointA: Point,
-    private var pointB: Point
+    private val pointA: Point,
+    private val pointB: Point
 ) {
     init{
         require(!pointA.getValues().contentEquals(pointB.getValues())){
@@ -32,10 +32,8 @@ class Line(
     }
 
     fun move(deltaX: Double, deltaY: Double){
-        pointA.setXValue(pointA.getXValue() + deltaX)
-        pointA.setYValue(pointA.getYValue() + deltaY)
-        pointB.setXValue(pointB.getXValue() + deltaX)
-        pointB.setYValue(pointB.getYValue() + deltaY)
+        pointA.move(deltaX, deltaY)
+        pointB.move(deltaX, deltaY)
     }
 
     private fun square(number: Double): Double{

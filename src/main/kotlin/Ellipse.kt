@@ -27,7 +27,6 @@ open class Ellipse (
     }
 
     override fun move(deltaX: Double, deltaY: Double){
-        center.setXValue(center.getXValue() + deltaX)
-        center.setYValue(center.getYValue() + deltaY)
+        center.move(deltaX, deltaY)
     }
 }

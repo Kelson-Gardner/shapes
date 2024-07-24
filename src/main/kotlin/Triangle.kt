@@ -44,11 +44,8 @@ class Triangle(
         }
 
     override fun move(deltaX: Double, deltaY: Double){
-        pointA.setXValue(pointA.getXValue() + deltaX)
-        pointA.setYValue(pointA.getYValue() + deltaY)
-        pointB.setXValue(pointB.getXValue() + deltaX)
-        pointB.setYValue(pointB.getYValue() + deltaY)
-        pointC.setXValue(pointC.getXValue() + deltaX)
-        pointC.setYValue(pointC.getYValue() + deltaY)
+        pointA.move(deltaX, deltaY)
+        pointB.move(deltaX, deltaY)
+        pointC.move(deltaX, deltaY)
     }
 }
